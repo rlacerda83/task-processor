@@ -1,0 +1,7 @@
+{
+  "debug": true,
+  "taskControlUrl": "http://moblymanager.local/local-processor/tasks/",
+  "taskControlConfirmUrl": "http://moblymanager.local/local-processor/confirm-tasks",
+  "taskControlToken": ""
+  "secretKey": "Jv9MibkBRasCa124"
+}
