@@ -199,8 +199,6 @@ Class TaskProcessor
      */
     public function processOneTask(Tasks $task)
     {
-        Log::info("Start one task process [{$task->id}]");
-
         if ($task->status == Tasks::STATUS_PROCESSED) {
             Log::info("Task [{$task->id}] is already processed");
             return true;
@@ -208,8 +206,6 @@ Class TaskProcessor
 
         $this->login();
         $this->processTask($task);
-
-        Log::info('Finish one task process');
 
         return true;
     }
