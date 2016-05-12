@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Services\TaskProcessor;
 use GuzzleHttp\Client;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class TaskController
 {
@@ -21,6 +22,9 @@ class TaskController
 
         $result = json_decode($client->get($taskUrl)->getBody()->getContents());
 
+        if (!isset($result->data->configuration)) {
+            return new JsonResponse(['status' => false]);
+        }
         $processor = new TaskProcessor();
         $processor->setSecretKey($this->app['secretKey']);
         $processor->setConfiguration($result->data->configuration);
@@ -33,6 +37,7 @@ class TaskController
 
         $response = [];
         $response['token'] = $this->app['taskControlToken'];
+        $response['tasks'] = [];
         $tasksWithSuccess = $processor->getTasksFinishedWithSuccess();
         foreach ($tasksWithSuccess as $task) {
             $response['tasks'][] = [
@@ -56,7 +61,7 @@ class TaskController
             $this->sendConfirmation($response);
         }
 
-        return $this->app['twig']->render('processor.twig');
+        return new JsonResponse(['status' => true]);
     }
 
     /**

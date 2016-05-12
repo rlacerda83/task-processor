@@ -1,7 +1,7 @@
 {
   "debug": true,
-  "taskControlUrl": "http://moblymanager.local/local-processor/tasks/",
-  "taskControlConfirmUrl": "http://moblymanager.local/local-processor/confirm-tasks",
+  "taskControlUrl": "http://teste-rlacerda83.rhcloud.com/local-processor/tasks/",
+  "taskControlConfirmUrl": "http://teste-rlacerda83.rhcloud.com/local-processor/confirm-tasks",
   "taskControlToken": ""
   "secretKey": "Jv9MibkBRasCa124"
 }
