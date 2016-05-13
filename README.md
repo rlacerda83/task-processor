@@ -1,5 +1,6 @@
 ## Configuração do Processador Local
 - Clone ou faça o download do código fonte do projeto
+- Rode composer install
 - Renomeie o arquivo local.json.template na pasta config para local.json e coloque o seu token de acesso. O token é gerado na aplicação principal, dentro do menu configurações.
 
 ## Configuração da Aplicação Principal
