@@ -1,0 +1,26 @@
+server {
+    listen 80;
+
+    root /var/www/projects/task-processor/web;
+    index index.php index.html index.htm;
+
+    server_name taskprocessor.local;
+
+
+    location / {
+        # try to serve file directly, fallback to front controller
+        try_files $uri /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        try_files $uri /index.php =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        # !!! CHOOSE ONE fastcgi_pass BELOW TO MATCH YOUR PHP SETTING !!!
+        #fastcgi_pass unix:/path/to/your/php56-fpm.sock;
+        fastcgi_pass 127.0.0.1:9000;
+        #fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param APPLICATION_ENV "development";
+    }
+}
