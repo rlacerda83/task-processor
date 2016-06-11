@@ -4,7 +4,8 @@
         "guzzlehttp/guzzle": "~6.0",
         "twig/twig": "^1.24",
         "igorw/config-service-provider": "^1.2",
-        "nesbot/carbon": "~1.14"
+        "nesbot/carbon": "~1.14",
+        "deployer/deployer": "~3.0"
     },
     "autoload": {
       "psr-4": {

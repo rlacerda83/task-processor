@@ -1,0 +1,10 @@
+dev:
+    host: urkke6f98aec.rlacerda83.koding.io
+    user: rlacerda83
+    identity_file:
+        public_key: "~/.ssh/id_rsa.pub"
+        private_key: "~/.ssh/id_rsa"
+        password: "key-password"
+    stage: prod
+    deploy_path: "/home/rlacerda83/www"
+    branch: master
