@@ -9,5 +9,3 @@
 - Ainda no menu configurações habilite o processamento local e informe a URL onde a aplicação local está rodando.
 
 Pronto, agora basta clicar no botão Local Processor no menu tasks da aplicação principal.
-
--- .. --

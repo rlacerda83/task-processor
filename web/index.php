@@ -22,7 +22,6 @@ $app->after(function (\Symfony\Component\HttpFoundation\Request $req, \Symfony\C
         );
 
         if (!in_array($contentType, $jsonpContentTypes)) {
-            // Don't touch the response
             return;
         }
 
@@ -41,5 +40,5 @@ $app['task.controller'] = $app->share(function() use ($app) {
 });
 
 $app->get('/processor', "task.controller:index");
-
 $app->run();
+// end
