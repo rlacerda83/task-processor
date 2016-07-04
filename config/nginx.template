@@ -6,7 +6,6 @@ server {
 
     server_name taskprocessor.local;
 
-
     location / {
         # try to serve file directly, fallback to front controller
         try_files $uri /index.php$is_args$args;
