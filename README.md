@@ -10,4 +10,4 @@
 
 Pronto, agora basta clicar no botão Local Processor no menu tasks da aplicação principal.
 
--- .. --
+= )
