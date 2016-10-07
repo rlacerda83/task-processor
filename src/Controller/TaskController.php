@@ -14,6 +14,11 @@ class TaskController
 	{
         $this->app = $app;
 	}
+	
+	public function test()
+	{
+		
+	}
 
     public function index()
     {
