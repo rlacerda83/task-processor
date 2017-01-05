@@ -327,7 +327,11 @@ Class TaskProcessor
         $html->loadHtml($page);
 
         $title = $html->getElementsByTagName('title')->item(0)->nodeValue;
-        if ( in_array($title, self::$messagesLoginSuccessful)) {
+        if ( mb_detect_encoding($title, 'UTF-8', true)) {
+            $title = utf8_decode($title);
+        }
+
+        if (in_array($title, self::$messagesLoginSuccessful)) {
             return true;
         }
 
